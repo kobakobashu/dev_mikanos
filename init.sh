@@ -1,0 +1,1 @@
+OS_DIR=/workspaces/mikanos-devcontainer/dev_mikanos

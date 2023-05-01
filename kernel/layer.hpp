@@ -30,6 +30,8 @@ class Layer {
   /** @brief 設定されたウィンドウを返す。 */
   std::shared_ptr<Window> GetWindow() const;
   Vector2D<int> GetPosition() const;
+  Layer& SetDraggable(bool draggable);
+  bool IsDraggable() const;
 
   /** @brief レイヤーの位置情報を指定された絶対座標へと更新する。再描画はしない。 */
   Layer& Move(Vector2D<int> pos);
@@ -41,8 +43,9 @@ class Layer {
 
  private:
   unsigned int id_;
-  Vector2D<int> pos_;
-  std::shared_ptr<Window> window_;
+  Vector2D<int> pos_{};
+  std::shared_ptr<Window> window_{};
+  bool draggable_{false};
 };
 
 /** @brief LayerManager は複数のレイヤーを管理する。 */
